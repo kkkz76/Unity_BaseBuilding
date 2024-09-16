@@ -13,6 +13,7 @@ public class Grid
         public int z;
     }
 
+    private bool showDebug = false;
     private int width;
     private int length;
     private int[,] gridArray;
@@ -31,7 +32,7 @@ public class Grid
         gridArray = new int[width, length];
         debugTextArray = new TextMesh[width, length];
 
-        bool showDebug = true;
+      
         if (showDebug)
         {
             // Initialize the debugTextArray with world text and draw debug lines
@@ -88,7 +89,7 @@ public class Grid
         if (x >= 0 && z >= 0 && x < width && z < length)
         {
             gridArray[x, z] = Mathf.Clamp(value, HEAT_MAP_MIN_VALUE, HEAT_MAP_MAX_VALUE);
-            if (debugTextArray != null) // Ensure debugTextArray is initialized
+            if (debugTextArray != null && showDebug) // ensure debugtextarray is initialized
             {
                 debugTextArray[x, z].text = gridArray[x, z].ToString();
             }

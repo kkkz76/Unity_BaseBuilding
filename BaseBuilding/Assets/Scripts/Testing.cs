@@ -2,15 +2,14 @@ using UnityEngine;
 
 public class Testing : MonoBehaviour
 {
-    private Grid grid;
-    public float planeHeight = 0f; // Height of the plane where the ray will intersect
-    [SerializeField] private HeatMapVisual heatMapVisual;
+    private Grid<HeatMapGridObject> grid;
+    public float planeHeight = 0f;
+    [SerializeField] private HeatMapGenericVisual HeatMapGenericVisual;
 
     private void Start()
     {
-        // Initialize the Grid, ensuring the Grid constructor matches your definition
-        grid = new Grid(20, 20, 5f, Vector3.zero);
-        heatMapVisual.SetGrid(grid);
+        grid = new Grid<HeatMapGridObject>(10, 10, 10f, Vector3.zero , (Grid<HeatMapGridObject> grid, int x , int z ) => new HeatMapGridObject(grid,x, z));
+        HeatMapGenericVisual.SetGrid(grid);
     }
 
     private void Update()
@@ -20,19 +19,22 @@ public class Testing : MonoBehaviour
             Vector3 mouseWorldPosition = GetMouseWorldPosition();
             if (mouseWorldPosition != Vector3.zero) // Ensure valid position
             {
-                //int value = grid.GetValue(mouseWorldPosition);
-                //grid.SetValue(mouseWorldPosition, value + 5);
-                grid.AddValue(mouseWorldPosition, 100,3,8);
+                HeatMapGridObject heatMapGridObject = grid.GetGridObject(mouseWorldPosition);
+                if(heatMapGridObject != null)
+                {
+                    heatMapGridObject.AddValue(10);
+                  
+                }
             }
         }
-        //if (Input.GetMouseButtonDown(1))
-        //{
-        //    Vector3 mouseWorldPosition = GetMouseWorldPosition();
-        //    if (mouseWorldPosition != Vector3.zero) // Ensure valid position
-        //    {
-        //        Debug.Log(grid.GetValue(mouseWorldPosition));
-        //    }
-        //}
+        if (Input.GetMouseButtonDown(1))
+        {
+            Vector3 mouseWorldPosition = GetMouseWorldPosition();
+            if (mouseWorldPosition != Vector3.zero) // Ensure valid position
+            {
+                Debug.Log(grid.GetGridObject(mouseWorldPosition));
+            }
+        }
     }
 
     public Vector3 GetMouseWorldPosition()
@@ -83,3 +85,4 @@ public class Testing : MonoBehaviour
         }
     }
 }
+

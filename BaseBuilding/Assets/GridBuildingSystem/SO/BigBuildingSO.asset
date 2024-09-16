@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19f5907e27480fc40acb23b373225bb8, type: 3}
+  m_Name: BigBuildingSO
+  m_EditorClassIdentifier: 
+  nameString: BigBuilding
+  prefab: {fileID: 3443029402850427243, guid: 3e9f0e794f30b744cb140e4829199a99, type: 3}
+  visual: {fileID: 1983023231884518004, guid: e72fa62ac93bbca419f8098885d2d1f3, type: 3}
+  XCost: 2
+  ZCost: 2

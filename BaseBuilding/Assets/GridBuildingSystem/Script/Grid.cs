@@ -13,7 +13,7 @@ public class Grid<TGridObject>
         public int z;
     }
 
-    private bool showDebug = false;
+    private bool showDebug = true;
     private int width;
     private int length;
     private TGridObject[,] gridArray;
@@ -72,7 +72,7 @@ public class Grid<TGridObject>
         return new Vector3(x, 0, z) * cellSize + originPosition;
     }
 
-    private void GetXZ(Vector3 worldPosition, out int x, out int z)
+    public void GetXZ(Vector3 worldPosition, out int x, out int z)
     {
         Vector3 relativePosition = worldPosition - originPosition;
         x = Mathf.FloorToInt(relativePosition.x / cellSize);

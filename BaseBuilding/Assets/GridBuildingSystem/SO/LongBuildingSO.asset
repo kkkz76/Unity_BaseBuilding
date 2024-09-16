@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19f5907e27480fc40acb23b373225bb8, type: 3}
+  m_Name: LongBuildingSO
+  m_EditorClassIdentifier: 
+  nameString: LongBuilding
+  prefab: {fileID: 2450832210137617383, guid: d3eda2f37ccb35f4783e6d7c8b53156b, type: 3}
+  visual: {fileID: 1983023231884518004, guid: 8c462b93ef0a9e14aa76e6320cfce73b, type: 3}
+  XCost: 2
+  ZCost: 1
